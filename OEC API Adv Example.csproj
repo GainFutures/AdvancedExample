@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A779C5E-878D-45B4-A752-CCB8A981744E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OEC.API.Example</RootNamespace>
+    <AssemblyName>OEC API Advanced Example</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\OEC API Advanced Example.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="API, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b6b45f27e2749b17, processorArchitecture=MSIL">
+      <HintPath>packages\OECAPI.3.5.10\lib\API.dll</HintPath>
+    </Reference>
+    <Reference Include="CommLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6b45f27e2749b17, processorArchitecture=MSIL">
+      <HintPath>packages\OECAPI.3.5.10\lib\CommLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ProtoSharp.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6b45f27e2749b17, processorArchitecture=MSIL">
+      <HintPath>packages\OECAPI.3.5.10\lib\ProtoSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderLinksControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderLinksControl.Designer.cs">
+      <DependentUpon>OrderLinksControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderListControl.Designer.cs">
+      <DependentUpon>OrderListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OsmAlgoParamDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OsmAlgoParamDlg.Designer.cs">
+      <DependentUpon>OsmAlgoParamDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OsmOrdersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OsmOrdersControl.Designer.cs">
+      <DependentUpon>OsmOrdersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllocationBlocksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllocationBlocksForm.Designer.cs">
+      <DependentUpon>AllocationBlocksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventLogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventLogControl.Designer.cs">
+      <DependentUpon>EventLogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BalanceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BalanceControl.Designer.cs">
+      <DependentUpon>BalanceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DOMControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DOMControl.Designer.cs">
+      <DependentUpon>DOMControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="HistogramChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HistogramChart.Designer.cs">
+      <DependentUpon>HistogramChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistogramControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HistogramControl.Designer.cs">
+      <DependentUpon>HistogramControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OLHCChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OLHCChart.Designer.cs">
+      <DependentUpon>OLHCChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChartsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChartsControl.Designer.cs">
+      <DependentUpon>ChartsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChatControl.Designer.cs">
+      <DependentUpon>ChatControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListConverter.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewsControl.Designer.cs">
+      <DependentUpon>NewsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderDetailsControl.Designer.cs">
+      <DependentUpon>OrderDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDraftControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderDraftControl.Designer.cs">
+      <DependentUpon>OrderDraftControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrdersControl.Designer.cs">
+      <DependentUpon>OrdersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AveragePositionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AveragePositionsControl.Designer.cs">
+      <DependentUpon>AveragePositionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PricesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PricesControl.Designer.cs">
+      <DependentUpon>PricesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllocationBlocksForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AllocationBlocksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderLinksControl.resx">
+      <DependentUpon>OrderLinksControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderListControl.resx">
+      <DependentUpon>OrderListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OsmAlgoParamDlg.resx">
+      <DependentUpon>OsmAlgoParamDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventLogControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EventLogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BalanceControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BalanceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DOMControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DOMControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistogramChart.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HistogramChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistogramControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>HistogramControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OLHCChart.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OLHCChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChartsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChartsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChatControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChatControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDetailsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OrderDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDraftControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OrderDraftControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OrdersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AveragePositionsControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AveragePositionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OsmOrdersControl.resx">
+      <DependentUpon>OsmOrdersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PricesControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PricesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubscribeControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SubscribeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SymbolLookup.resx">
+      <DependentUpon>SymbolLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TickViewControl.resx">
+      <DependentUpon>TickViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AvgPositionListEntry.datasource" />
+    <None Include="Properties\DataSources\BarEntry.datasource" />
+    <None Include="Properties\DataSources\ContractDOMAskEntry.datasource" />
+    <None Include="Properties\DataSources\ContractDOMBidEntry.datasource" />
+    <None Include="Properties\DataSources\HistEntry.datasource" />
+    <None Include="Properties\DataSources\OEC.API.Account.datasource" />
+    <None Include="Properties\DataSources\OrderDetailsEntry.datasource" />
+    <None Include="Properties\DataSources\SerAllocationBlockItem.datasource" />
+    <None Include="Properties\DataSources\TickEntry.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SubscribeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubscribeControl.Designer.cs">
+      <DependentUpon>SubscribeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SymbolLookup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SymbolLookup.Designer.cs">
+      <DependentUpon>SymbolLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TickViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TickViewControl.Designer.cs">
+      <DependentUpon>TickViewControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

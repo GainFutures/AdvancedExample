@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Microsoft Sans Serif" Size="8.25" />
+  <Class Name="TraderLight.BaseControl" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BaseControl.cs</FileName>
+      <HashCode>AABAAAAAACAAAAAAAACAAAACAAAAAAAACAAAAIAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.SubscribeControl" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SubscribeControl.cs</FileName>
+      <HashCode>QABEAAAAACAAABAAAACQBAACAAAAAAACAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.PricesControl" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PricesControl.cs</FileName>
+      <HashCode>QkBAAQAAAKAEAAEAAACAABD+AwAAAAAAAAABAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.DOMControl" Collapsed="true">
+    <Position X="2" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DOMControl.cs</FileName>
+      <HashCode>AgBiABAAAjAEABAABgCAAAASAAQBAQAAAAAACCQMAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.OrderSimpleDraftControl" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrderSimpleDraftControl.cs</FileName>
+      <HashCode>QAjEAAAAACAAAZABAACABAADAAAAAAAACCAAAIAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.OrderDraftControl" Collapsed="true">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrderDraftControl.cs</FileName>
+      <HashCode>QABAEAAEACEAEJAAAQCAAAACAAAAAAAAAiQAAIAAC0I=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.OrdersOCOControl" Collapsed="true">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrdersOCOControl.cs</FileName>
+      <HashCode>AAAAEAAAACAAABAAgQCAAAiCAAAAAAAAAIQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.OrdersLinkedControl" Collapsed="true">
+    <Position X="1.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrdersLinkedControl.cs</FileName>
+      <HashCode>AAAAAAAAAGAAAZAAAACAAAiCAABAAAAAABAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.OrderDetailsControl" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrderDetailsControl.cs</FileName>
+      <HashCode>gAAAAAAoCCAAAICAAACAEAACBAAAAAhAAIAAAAgAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.ChartsControl" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ChartsControl.cs</FileName>
+      <HashCode>QABEAQCAACAAABQAAQCQBIAGAAAEAAFAAAAAAwAAEAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.HistogramControl" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>HistogramControl.cs</FileName>
+      <HashCode>AABAAAAAgSABAAAAAACABIBCIAAAAAEABAAAAQACCAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.AveragePositionsControl" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>AveragePositionsControl.cs</FileName>
+      <HashCode>AAJAIAAACCBAADCCgACAQAACAAAAAICAAACAAAQAAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.BalanceControl" Collapsed="true">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BalanceControl.cs</FileName>
+      <HashCode>AABAAAAAACIIwBIAAICAAAgGAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.NewsControl" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>NewsControl.cs</FileName>
+      <HashCode>QABAAAAQACAAAAAAAACAAIACABAAAAAAAEAAAQAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.ChatControl" Collapsed="true">
+    <Position X="11.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ChatControl.cs</FileName>
+      <HashCode>QABBAAAACCAAAAQAAACIAIiCAAAAUAAAAAAQAQAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraderLight.OrdersControl" Collapsed="true">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrdersControl.cs</FileName>
+      <HashCode>YQBAgAIAACgECEAglQKgQACiAQAAgAAAiAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>
