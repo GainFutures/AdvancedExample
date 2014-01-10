@@ -15,35 +15,32 @@ namespace OEC.API.Example
         public static readonly string ABSavesFileName =
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\AllocationBlocks.xml";
 
-        private static object _currentAccountOfAB;
+
+        private static AccountOrAB _currentAccountOrAB;
 
         /// <summary>
         ///     Current account or allocation block
         /// </summary>
-        public static object CurrentAccountOrAB
+        public static AccountOrAB CurrentAccountOrAB
         {
-            get { return _currentAccountOfAB; }
+            get { return _currentAccountOrAB; }
             set
             {
-                _currentAccountOfAB = value;
+                _currentAccountOrAB = value;
                 if (OnCurrentAccountChanged != null)
                 {
-                    var account = value as Account;
-                    if (account != null)
-                        OnCurrentAccountChanged(account, null);
-                    else
-                    {
-                        if (((AllocationBlock) value).Items.Count > 0)
-                            OnCurrentAccountChanged(((AllocationBlock) value).Items.Values[0].Account, null);
-                    }
+                    OnCurrentAccountChanged(_currentAccountOrAB);
                 }
             }
         }
 
+
+        public delegate void CurrentAccountChanged(AccountOrAB accountOrAB);
         /// <summary>
         ///     Occurs when current account or allocation block changed
         /// </summary>
-        public static event OnBalanceChangedEvent OnCurrentAccountChanged;
+       // public static event OnBalanceChangedEvent OnCurrentAccountChanged;
+       public static event CurrentAccountChanged OnCurrentAccountChanged;
 
         /// <summary>
         ///     Sets current account or allocation block to order draft
@@ -68,13 +65,13 @@ namespace OEC.API.Example
 
             draft.Account = curAccount;
 
-            var currentAccount = CurrentAccountOrAB as Account;
+            var currentAccount = CurrentAccountOrAB.Account;
             if (currentAccount != null)
             {
                 draft.Account = currentAccount;
                 draft.AllocationBlock = null;
             }
-            var currentAB = CurrentAccountOrAB as AllocationBlock;
+            var currentAB = CurrentAccountOrAB.AllocationBlock;
             if (currentAB != null)
             {
                 draft.Account = null;

@@ -27,14 +27,15 @@ namespace OEC.API.Example
             OECClient.Global.OnBalanceChanged += OECClient_OnBalanceChanged;
 
             Globals.OnCurrentAccountChanged += Globals_OnCurrentAccountChanged;
+            UpdateBalance(Globals.CurrentAccountOrAB);
         }
 
         /// <summary>
         ///     Occurs when current account changed
         /// </summary>
-        private void Globals_OnCurrentAccountChanged(Account account, Currency currency)
+        private void Globals_OnCurrentAccountChanged(AccountOrAB accountOrAB)
         {
-            OECClient_OnBalanceChanged(account, currency);
+            UpdateBalance(accountOrAB);
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace OEC.API.Example
         /// </summary>
         private void OECClient_OnAccountSummaryChanged(Account account, Currency currency)
         {
-            OECClient_OnBalanceChanged(account, currency);
+            UpdateBalance(new AccountOrAB(account));
         }
 
         /// <summary>
@@ -50,9 +51,17 @@ namespace OEC.API.Example
         /// </summary>
         private void OECClient_OnBalanceChanged(Account account, Currency currency)
         {
-            if (Globals.CurrentAccountOrAB == account)
+            UpdateBalance(new AccountOrAB(account));
+        }
+
+        /// <summary>
+        ///     Update Ballance Control
+        /// </summary>
+        private void UpdateBalance(AccountOrAB accountOrAB)
+        {
+            if (Globals.CurrentAccountOrAB == accountOrAB || Globals.CurrentAccountOrAB.HasAccount(accountOrAB.Account))
             {
-                Balance balance = account.TotalBalance;
+                Balance balance = accountOrAB.TotalBalance;
                 if (balance == null)
                 {
                     NullAllIndicators();

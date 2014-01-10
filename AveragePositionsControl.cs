@@ -33,8 +33,16 @@ namespace OEC.API.Example
 
             OECClient.Global.OnAvgPositionChanged += Global_OnAvgPositionChanged;
             OECClient.Global.OnLoginComplete += Global_OnLoginComplete;
+            Globals.OnCurrentAccountChanged += Globals_OnCurrentAccountChanged;
+            UpdatePositions(null);
+        }
 
-            UpdatePositions();
+        /// <summary>
+        ///     Occurs when current account changed
+        /// </summary>
+        void Globals_OnCurrentAccountChanged(AccountOrAB accountOrAB)
+        {
+            UpdatePositions(null);
         }
 
         /// <summary>
@@ -42,7 +50,8 @@ namespace OEC.API.Example
         /// </summary>
         private void Global_OnLoginComplete()
         {
-            UpdatePositions();
+           // Account account = OECClient.Global.Accounts.First;
+            UpdatePositions(null);
         }
 
         /// <summary>
@@ -50,24 +59,24 @@ namespace OEC.API.Example
         /// </summary>
         private void Global_OnAvgPositionChanged(Account account, Position contractPosition)
         {
-            UpdatePositions();
+            UpdatePositions(account);
         }
 
         /// <summary>
         ///     Updates Average position control
         /// </summary>
-        public void UpdatePositions()
+        public void UpdatePositions(Account account)
         {
             if (OECClient.Global.ConnectionClosed)
                 return;
 
-            AvgPositionList positionList = OECClient.Global.Accounts.First.AvgPositions;
-            if (positionList == null || positionList.Count == 0)
-                return;
+            if (account == null || Globals.CurrentAccountOrAB.HasAccount(account))
+            {
 
-            _positionsBindingSource.DataSource = AvgPositionListEntry.ConvertFromOecAvgPositionList();
+                _positionsBindingSource.DataSource = AvgPositionListEntry.ConvertFromOecAvgPositionList();
 
-            dgAvgPositions.DataSource = _positionsBindingSource;
+                dgAvgPositions.DataSource = _positionsBindingSource;
+            }
         }
 
 
@@ -118,13 +127,13 @@ namespace OEC.API.Example
         /// <summary>
         ///     Native position
         /// </summary>
-        private readonly Position _position;
+        private readonly IPosition _position;
 
         /// <summary>
         ///     Creates instance
         /// </summary>
         /// <param name="position">Native OEC API position on which to create instance</param>
-        private AvgPositionListEntry(Position position)
+        private AvgPositionListEntry(IPosition position)
         {
             _position = position;
         }
@@ -204,7 +213,7 @@ namespace OEC.API.Example
         /// <summary>
         ///     Native position instance
         /// </summary>
-        public Position Position
+        public IPosition Position
         {
             get { return _position; }
         }
@@ -216,14 +225,17 @@ namespace OEC.API.Example
         public static IList<AvgPositionListEntry> ConvertFromOecAvgPositionList()
         {
             return
-                ListConverter<Position, AvgPositionListEntry>.FromIEnumerable(
-                    OECClient.Global.Accounts.First.AvgPositions, AvgPositionListConverter);
+                //ListConverter<Position, AvgPositionListEntry>.FromIEnumerable(
+                //    OECClient.Global.Accounts.First.AvgPositions, AvgPositionListConverter);
+                ListConverter<IPosition, AvgPositionListEntry>.FromIEnumerable(
+                    Globals.CurrentAccountOrAB.AvgPositions, AvgPositionListConverter);
+
         }
 
         /// <summary>
         ///     Converts native position to position list entry
         /// </summary>
-        private static AvgPositionListEntry AvgPositionListConverter(Position position)
+        private static AvgPositionListEntry AvgPositionListConverter(IPosition position)
         {
             return new AvgPositionListEntry(position);
         }

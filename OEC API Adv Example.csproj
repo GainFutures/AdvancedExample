@@ -37,10 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="API, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b6b45f27e2749b17, processorArchitecture=MSIL">
-      <HintPath>packages\OECAPI.3.5.10\lib\API.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\common\API\bin\Debug\API.dll</HintPath>
     </Reference>
     <Reference Include="CommLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6b45f27e2749b17, processorArchitecture=MSIL">
-      <HintPath>packages\OECAPI.3.5.10\lib\CommLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\common\API\bin\Debug\CommLib.dll</HintPath>
     </Reference>
     <Reference Include="ProtoSharp.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b6b45f27e2749b17, processorArchitecture=MSIL">
       <HintPath>packages\OECAPI.3.5.10\lib\ProtoSharp.Core.dll</HintPath>
@@ -53,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountOrAB.cs" />
     <Compile Include="LogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,7 +308,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\DataSources\AvgPositionListEntry.datasource" />
     <None Include="Properties\DataSources\BarEntry.datasource" />
     <None Include="Properties\DataSources\ContractDOMAskEntry.datasource" />

@@ -98,8 +98,8 @@ namespace OEC.API.Example
         /// </summary>
         private void CheckCurrentAccount()
         {
-            Globals.CurrentAccountOrAB = OECClient.Global.Accounts.First;
-            if (Globals.CurrentAccountOrAB != null)
+            Globals.CurrentAccountOrAB = new AccountOrAB(OECClient.Global.Accounts.First);
+            if (Globals.CurrentAccountOrAB.Account != null)
             {
                 ((ToolStripMenuItem) selectAccountToolStripMenuItem.DropDownItems[Globals.CurrentAccountOrAB.ToString()])
                     .Checked = true;
@@ -138,7 +138,15 @@ namespace OEC.API.Example
 
             clickedMenuItem.Checked = true;
 
-            Globals.CurrentAccountOrAB = clickedMenuItem.Tag;
+            Account account = clickedMenuItem.Tag as Account;
+            if (account != null)
+                Globals.CurrentAccountOrAB =  new AccountOrAB(account);
+            else
+            {
+                AllocationBlock allocationBlock = clickedMenuItem.Tag as AllocationBlock;
+                if (allocationBlock != null)
+                    Globals.CurrentAccountOrAB = new AccountOrAB(allocationBlock);
+            }
             UpdateCurrentAccount();
         }
 
