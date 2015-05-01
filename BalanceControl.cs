@@ -59,6 +59,9 @@ namespace OEC.API.Example
         /// </summary>
         private void UpdateBalance(AccountOrAB accountOrAB)
         {
+            if (accountOrAB == null)
+                return;
+
             if (Globals.CurrentAccountOrAB == accountOrAB || Globals.CurrentAccountOrAB.HasAccount(accountOrAB.Account))
             {
                 Balance balance = accountOrAB.TotalBalance;
