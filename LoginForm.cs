@@ -72,7 +72,7 @@ namespace OEC.API.Example
                 OECClient.Global.Disconnect();
                 OnConnectionStatusChange(ConnectionStatus.Connecting);
                 OECClient.Global.UUID = "9e61a8bc-0a31-4542-ad85-33ebab0e4e86";
-                OECClient.Global.Connect("sim.openecry.com", 9200, edLogin.Text, edPass.Text, false);
+                OECClient.Global.Connect("api.gainfutures.com", 9200, edLogin.Text, edPass.Text, false);
             }
             catch (Exception ex)
             {
